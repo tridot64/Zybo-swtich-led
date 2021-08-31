@@ -20,10 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top(
-    input switch,
-    output led
-    );
+//module top(
+//    input switch,
+//    output reg led
+//    );
     
-    assign led = switch;
+//    always @(*) // posedge run everytime the switch changes
+//        led = switch;
+//endmodule
+
+
+module top(
+    input clk,
+    input switch,
+    output reg led);
+    
+    always @(posedge clk)
+        led=switch;
 endmodule
